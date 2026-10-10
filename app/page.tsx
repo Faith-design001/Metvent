@@ -2,8 +2,22 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
 
+const siteUrl = process.env.SITE_URL;
+
 export const metadata: Metadata = {
   description: 'Keep a conversation going',
+  openGraph: {
+    title: 'Metvent',
+    description: 'Keep a conversation going',
+    type: 'website',
+    ...(siteUrl ? { url: siteUrl } : {}),
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Metvent',
+    description: 'Keep a conversation going',
+  },
+  ...(siteUrl ? { alternates: { canonical: siteUrl } } : {}),
 };
 
 export default function HomePage() {
