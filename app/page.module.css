@@ -1,0 +1,41 @@
+.container {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-roles-collection-color-roles-surface-background);
+  color: var(--color-roles-collection-color-roles-surface-on-surface-color);
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--typography-headline-large-fontfamily);
+  font-size: calc(var(--typography-headline-large-fontsize) * 1px);
+  line-height: calc(var(--typography-headline-large-lineheight) * 1px);
+  font-weight: var(--typography-headline-large-fontweight);
+  letter-spacing: calc(var(--typography-headline-large-letterspacing) * 1px);
+  color: var(--color-roles-collection-color-roles-surface-on-surface-color);
+}
+
+.description {
+  margin: 0;
+  font-family: var(--typography-body-large-fontfamily);
+  font-size: calc(var(--typography-body-large-fontsize) * 1px);
+  line-height: calc(var(--typography-body-large-lineheight) * 1px);
+  font-weight: var(--typography-body-large-fontweight);
+  letter-spacing: calc(var(--typography-body-large-letterspacing) * 1px);
+  color: var(--color-roles-collection-color-roles-surface-on-surface-variant-color);
+}
+
+.link {
+  font-family: var(--typography-label-large-fontfamily);
+  font-size: calc(var(--typography-label-large-fontsize) * 1px);
+  line-height: calc(var(--typography-label-large-lineheight) * 1px);
+  font-weight: var(--typography-label-large-fontweight);
+  letter-spacing: calc(var(--typography-label-large-letterspacing) * 1px);
+  color: var(--color-roles-collection-color-roles-primary-primary-color);
+  text-decoration: var(--typography-label-large-textdecoration);
+}
