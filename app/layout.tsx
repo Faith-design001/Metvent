@@ -3,7 +3,10 @@ import '../index.css';
 import { fontSans } from '@/lib/fonts';
 
 export const metadata: Metadata = {
-  title: 'Metvent',
+  title: {
+    default: 'Metvent',
+    template: '%s | Metvent',
+  },
   description: 'Metvent shows room activity and attendee conversation topics at community meetups.',
 };
 
