@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     title: 'Metvent',
     description: 'Keep a conversation going',
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   ...(siteUrl ? { alternates: { canonical: siteUrl } } : {}),
 };
 

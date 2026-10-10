@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     default: 'Metvent',
     template: '%s | Metvent',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
