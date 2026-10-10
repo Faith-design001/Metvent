@@ -7,7 +7,6 @@ export const metadata: Metadata = {
     default: 'Metvent',
     template: '%s | Metvent',
   },
-  description: 'Metvent shows room activity and attendee conversation topics at community meetups.',
 };
 
 export default function RootLayout({
