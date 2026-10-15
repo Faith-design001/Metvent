@@ -11,5 +11,6 @@ describe('PAGE_NAMES', () => {
     expect(PAGE_NAMES.opener).toBe('Opener');
     expect(PAGE_NAMES.people).toBe('Who I Met');
     expect(PAGE_NAMES.organiser).toBe('Organiser Dashboard');
+    expect(PAGE_NAMES.organiserLogin).toBe('Organiser Sign In');
   });
 });

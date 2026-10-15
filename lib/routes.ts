@@ -11,4 +11,5 @@ export const PAGE_NAMES = {
   opener: 'Opener',
   people: 'Who I Met',
   organiser: 'Organiser Dashboard',
+  organiserLogin: 'Organiser Sign In',
 } as const;
