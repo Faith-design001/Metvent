@@ -13,4 +13,12 @@ describe('PAGE_NAMES', () => {
     expect(PAGE_NAMES.organiser).toBe('Organiser Dashboard');
     expect(PAGE_NAMES.organiserLogin).toBe('Organiser Sign In');
   });
+
+  it('defines a four word tagline from PRD section 4', () => {
+    const tagline = 'Keep a conversation going';
+    const words = tagline.split(/\s+/);
+    expect(words).toHaveLength(4);
+    expect(words).toEqual(['Keep', 'a', 'conversation', 'going']);
+  });
 });
+

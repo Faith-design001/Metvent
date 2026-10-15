@@ -42,7 +42,7 @@ const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" wid
   <rect width="32" height="32" rx="7" fill="${primaryHex}"/>
   <circle cx="11" cy="13" r="3.5" fill="${onPrimaryHex}"/>
   <circle cx="21" cy="13" r="3.5" fill="${onPrimaryHex}"/>
-  <path d="M10 20 C10 17 14 17 16 18.5 C18 17 22 17 22 20" stroke="${onPrimaryHex}" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M10 20 C10 17 14 17 16 18.5 C18 17 22 17 22 20" stroke="${onPrimaryHex}" stroke-width="2.5" stroke-linecap="round" fill="none"/>
 </svg>
 `;
 
