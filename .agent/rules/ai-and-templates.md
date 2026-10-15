@@ -101,11 +101,9 @@ STATUS: PROPOSED. Not approved. Do not build until the owner marks it approved. 
 - Exit line (source `fixed text`):
   - Thank you for the chat. I am going to say hello to a few others. Enjoy the rest of the night.
 
+- Generate the question once per session and store it on the session record.
+  Why: generating on every attendee view would quickly exhaust the free tier API quota.
+
 ## Open items for the owner
 
-- Role line: PRD 6.2 step 2 says use the role line when there is no tonight line. PRD 6.2 empty states and 6.11 say fall back to room context. Decide which applies. Until then, build the room context fallback only.
-- Model provider: PRD section 7 and Assumption 1 say Claude Haiku. This project says Gemini free tier. Update one of them.
-- Once or every view: PRD does not say whether the question is generated once per session or on every view. Every view means one call per attendee and could use up the free tier. Once needs a place to store the question, which is a schema change (see data-model.md). Do not build the call until this is decided.
-- "Stated topic": PRD 6.3 says "stated topic" and also "templates keyed to topic categories". Decide whether this means the tonight line or the event topic tags.
-- Match threshold: the number that decides a pass or fail on the question check.
-- Optional text screening: the PRD refuses requests about romantic or sexual interest, but the optional text is quoted back and cannot be detected without a word list or model. Decide whether to screen it, and how.
+None. All items resolved by owner decisions.

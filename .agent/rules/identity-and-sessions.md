@@ -38,13 +38,15 @@ Job: define how Metvent knows who a request belongs to, for attendees and for or
 
 - Sign organisers in with a magic link sent by email. (A magic link is a one use link that logs the person in, and it expires.)
   Why: organisers manage data for many attendees, and there is no password to leak.
+- Set magic link validity to 15 minutes. Store active tokens in an in-memory map. Log links to the server console in development.
+  Why: 15 minutes prevents leaked links from remaining valid indefinitely, and an in-memory map adds zero extra dependencies.
 - Use a different cookie name and a different signing secret for organisers. An attendee cookie must never open an organiser route, and the reverse.
   Why: the PRD treats a lost organiser session as the more costly one.
 - Let an organiser read and change only events they created.
   Why: one organiser must never touch another's event.
+- Organiser login route sits at `/organiser/login`. Event creation route sits at `/organiser/new`.
+  Why: organisers need an entry point to sign in and set up events, separated from attendee join.
 
 ## Open items for the owner
 
-- Email service for magic links, and how long a link stays valid. Neither is named.
-- Magic link storage: a one use link needs a stored record or a library. No table exists, and a library needs approval.
-- Routes: no organiser login route and no new event route exist.
+None. All items resolved by owner decisions.

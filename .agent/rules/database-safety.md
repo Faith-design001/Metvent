@@ -10,8 +10,8 @@ Job: control how database changes are made, and who applies them.
 
 Owner fills these in before the first schema task.
 
-- Local development database: `__________`
-- Test database: `__________`
+- Local development database: `metvent_dev`
+- Test database: `metvent_test`
 
 Any database not named above is production. Never connect to production from the coding environment.
 Why: an address alone does not show which database it is, so the safe default is production.
