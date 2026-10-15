@@ -2,38 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-const siteUrl = process.env.SITE_URL;
-
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Metvent — Keep a conversation going',
-  },
-  description: 'Keep a conversation going',
-  openGraph: {
-    title: 'Metvent — Keep a conversation going',
-    description: 'Keep a conversation going',
-    type: 'website',
-    ...(siteUrl ? { url: siteUrl } : {}),
-    images: [
-      {
-        url: '/icon.png',
-        width: 32,
-        height: 32,
-        alt: 'Metvent logo',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Metvent — Keep a conversation going',
-    description: 'Keep a conversation going',
-    images: ['/icon.png'],
-  },
   robots: {
     index: true,
     follow: true,
   },
-  ...(siteUrl ? { alternates: { canonical: siteUrl } } : {}),
 };
 
 export default function HomePage() {
