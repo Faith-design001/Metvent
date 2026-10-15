@@ -27,6 +27,10 @@ Job: define how Metvent knows who a request belongs to, for attendees and for or
   Why: recovery needs accounts. The PRD accepts this limit.
 - Tell the user on the notes screen that notes live on this device and are lost if browser data is cleared.
   Why: the product should not promise more than it can keep.
+- Set attendee session cookie lifetime to 365 days (1 year).
+  Why: version one serves recurring monthly community meetups, so notes and device identity must survive between meetings.
+- Keep one device session token across events on the same device. Store the list of joined event ids inside the signed device session cookie.
+  Why: notes from different events stay together on the device without an account, and the cookie proves which events the attendee joined.
 - Require every read and write that touches attendee data to take the device session as an input, checked on the server.
   Why: no code path should reach another attendee's data because a parameter was left out.
 
@@ -41,9 +45,6 @@ Job: define how Metvent knows who a request belongs to, for attendees and for or
 
 ## Open items for the owner
 
-- Cookie lifetime. The PRD sets none, and it decides how long notes survive.
 - Email service for magic links, and how long a link stays valid. Neither is named.
 - Magic link storage: a one use link needs a stored record or a library. No table exists, and a library needs approval.
-- Joined events: the server must tell which events a device joined, and cards are deleted at 30 days. Proposed: list the joined event ids inside the signed cookie.
-- Token scope: PRD section 8 text says a session is "within a specific event", but its schema reuses one token across events. This file follows the schema. Confirm.
 - Routes: no organiser login route and no new event route exist.

@@ -28,7 +28,7 @@ Job: keep secrets, inputs, access, and error output safe.
   Why: those details help an attacker and mean nothing to the user.
 - Never write a secret into logs or error reports. Rules for personal data are in `privacy-boundaries.md`.
   Why: logs outlast the data they describe, and more people read them.
-- Limit repeated attempts on the join code, the magic link request, and the model call. Count failed attempts only. A venue puts many attendees behind one IP address, so set the per IP ceiling high. Proposed: 60 failed codes per 10 minutes per IP, and 5 magic link requests per hour per email. After the limit, refuse with a plain message. Ask before adding storage or a package to count attempts.
-  Why: without a limit a script can try every code, and a tight per IP limit would lock out a whole room at the door.
+- Limit repeated failed attempts on the join code to 60 failed codes per 10 minutes per IP address, using an in-memory sliding window store. Limit magic link requests to 5 per hour per email. Count failed attempts only. After the limit, refuse with a plain message.
+  Why: venues put many attendees behind one IP address, so the ceiling must be high, and an in-memory store adds zero extra dependencies.
 - Ask before turning off any security check, even briefly.
   Why: a check switched off for testing is often still off when the code ships.
