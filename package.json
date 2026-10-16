@@ -2,6 +2,11 @@
   "name": "metvent",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://metvent.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Faith-design001/Metvent.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

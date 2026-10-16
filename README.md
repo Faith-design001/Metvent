@@ -1,5 +1,10 @@
 # Metvent
 
+> **Live Application:** [https://metvent.vercel.app](https://metvent.vercel.app)
+
+[![Live Website](https://img.shields.io/badge/Live_Site-metvent.vercel.app-5145e5?style=for-the-badge&logo=vercel&logoColor=white)](https://metvent.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Faith--design001%2FMetvent-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Faith-design001/Metvent)
+
 Metvent is a web page opened at one specific event that shows what is happening in the room and what attendees have said they want to talk about. It turns real event data into something specific an attendee can say, without guessing anything about another person.
 
 Version one serves solo attendees at recurring monthly community meetups of 30 to 120 people, where the main problem is continuing a conversation after it starts.
