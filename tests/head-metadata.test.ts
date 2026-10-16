@@ -32,34 +32,22 @@ describe('Premium Head and Share Metadata Setup', () => {
     'utf8'
   );
 
-  it('configures strong default title and inner page title template in root layout', () => {
-    expect(rootLayoutContent).toContain("default: 'Metvent — Keep a conversation going'");
-    expect(rootLayoutContent).toContain("template: '%s | Metvent'");
+  it('omits page title, description, and viewport from root layout', () => {
+    expect(rootLayoutContent).not.toMatch(/default:\s*['"]Metvent/);
+    expect(rootLayoutContent).not.toMatch(/description:/);
+    expect(rootLayoutContent).not.toMatch(/export const viewport/);
+    expect(rootLayoutContent).not.toMatch(/themeColor/);
   });
 
-  it('configures ~150 char description, search keywords, and web app manifest in layout', () => {
-    expect(rootLayoutContent).toContain('description:');
-    expect(rootLayoutContent).toContain('keywords:');
-    expect(rootLayoutContent).toContain("manifest: '/manifest.webmanifest'");
+  it('omits openGraph, twitter, icons, and manifest from layout', () => {
+    expect(rootLayoutContent).not.toMatch(/openGraph:/);
+    expect(rootLayoutContent).not.toMatch(/twitter:/);
+    expect(rootLayoutContent).not.toMatch(/manifest:/);
+    expect(rootLayoutContent).not.toMatch(/icons:/);
   });
 
-  it('configures light and dark purple browser theme colors in viewport', () => {
-    expect(rootLayoutContent).toContain('#5145e5');
-    expect(rootLayoutContent).toContain('#312e81');
-    expect(rootLayoutContent).toContain('prefers-color-scheme: light');
-    expect(rootLayoutContent).toContain('prefers-color-scheme: dark');
-  });
-
-  it('configures Open Graph and Twitter summary_large_image previews in layout', () => {
-    expect(rootLayoutContent).toContain('openGraph:');
-    expect(rootLayoutContent).toContain("card: 'summary_large_image'");
-    expect(rootLayoutContent).toContain('/opengraph-image.png');
-  });
-
-  it('embeds JSON-LD structured data for WebApplication and Organization', () => {
-    expect(rootLayoutContent).toContain('application/ld+json');
-    expect(rootLayoutContent).toContain('WebApplication');
-    expect(rootLayoutContent).toContain('Organization');
+  it('omits JSON-LD structured data from layout', () => {
+    expect(rootLayoutContent).not.toMatch(/application\/ld\+json/);
   });
 
   it('sets absolute title and canonical link on home page', () => {
