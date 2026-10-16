@@ -19,11 +19,6 @@ export default function OrganiserLoginPage() {
           <Link href="/" className={styles.wordmark}>
             Metvent
           </Link>
-          <nav className={styles.nav} aria-label="Navigation">
-            <Link href="/join" className={styles.navLink}>
-              Join with a code
-            </Link>
-          </nav>
         </div>
       </header>
 

@@ -7,14 +7,6 @@ export default function HomePage() {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <span className={styles.wordmark}>Metvent</span>
-          <nav className={styles.nav} aria-label="Main navigation">
-            <Link href="/join" className={styles.navLink}>
-              Join with a code
-            </Link>
-            <Link href="/organiser/login" className={styles.navLinkSecondary}>
-              Organiser sign in
-            </Link>
-          </nav>
         </div>
       </header>
 

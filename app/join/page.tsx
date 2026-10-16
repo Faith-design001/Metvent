@@ -38,11 +38,6 @@ export default async function JoinPage(props: JoinPageProps) {
           <Link href="/" className={styles.wordmark}>
             Metvent
           </Link>
-          <nav className={styles.nav} aria-label="Navigation">
-            <Link href="/organiser/login" className={styles.navLink}>
-              Organiser sign in
-            </Link>
-          </nav>
         </div>
       </header>
 

@@ -46,56 +46,6 @@
   color: var(--color-roles-collection-color-roles-surface-on-surface-color);
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-4);
-}
-
-.navLink {
-  font-family: var(--typography-label-large-fontfamily);
-  font-size: calc(var(--typography-label-large-fontsize) * 1px);
-  line-height: calc(var(--typography-label-large-lineheight) * 1px);
-  font-weight: var(--typography-label-large-fontweight);
-  letter-spacing: calc(var(--typography-label-large-letterspacing) * 1px);
-  color: var(--color-roles-collection-color-roles-primary-primary-color);
-  text-decoration: none;
-  padding-top: var(--spacing-2);
-  padding-bottom: var(--spacing-2);
-  padding-left: var(--spacing-3);
-  padding-right: var(--spacing-3);
-  border-radius: var(--radius-md);
-}
-
-.navLink:focus-visible {
-  outline-width: var(--border-width-thick);
-  outline-style: solid;
-  outline-color: var(--color-roles-collection-color-roles-primary-primary-color);
-  outline-offset: var(--spacing-1);
-}
-
-.navLinkSecondary {
-  font-family: var(--typography-label-large-fontfamily);
-  font-size: calc(var(--typography-label-large-fontsize) * 1px);
-  line-height: calc(var(--typography-label-large-lineheight) * 1px);
-  font-weight: var(--typography-label-large-fontweight);
-  letter-spacing: calc(var(--typography-label-large-letterspacing) * 1px);
-  color: var(--color-roles-collection-color-roles-surface-on-surface-variant-color);
-  text-decoration: none;
-  padding-top: var(--spacing-2);
-  padding-bottom: var(--spacing-2);
-  padding-left: var(--spacing-3);
-  padding-right: var(--spacing-3);
-  border-radius: var(--radius-md);
-}
-
-.navLinkSecondary:focus-visible {
-  outline-width: var(--border-width-thick);
-  outline-style: solid;
-  outline-color: var(--color-roles-collection-color-roles-primary-primary-color);
-  outline-offset: var(--spacing-1);
-}
-
 /* =========================================
    MAIN AND SECTIONS
    ========================================= */
