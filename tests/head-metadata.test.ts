@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
-describe('Premium Head and Share Metadata Setup', () => {
+describe('Stripped Head and Share Metadata Setup', () => {
   const rootLayoutContent = fs.readFileSync(
     path.join(__dirname, '..', 'app', 'layout.tsx'),
     'utf8'
@@ -27,49 +27,29 @@ describe('Premium Head and Share Metadata Setup', () => {
     path.join(__dirname, '..', 'app', 'sitemap.ts'),
     'utf8'
   );
-  const manifestContent = fs.readFileSync(
-    path.join(__dirname, '..', 'app', 'manifest.ts'),
-    'utf8'
-  );
 
-  it('configures strong default title and inner page title template in root layout', () => {
-    expect(rootLayoutContent).toContain("default: 'Metvent — Keep a conversation going'");
-    expect(rootLayoutContent).toContain("template: '%s | Metvent'");
+  it('omits page title, description, and viewport from root layout', () => {
+    expect(rootLayoutContent).not.toMatch(/title:/);
+    expect(rootLayoutContent).not.toMatch(/description:/);
+    expect(rootLayoutContent).not.toMatch(/export const viewport/);
+    expect(rootLayoutContent).not.toMatch(/themeColor/);
   });
 
-  it('configures ~150 char description, search keywords, and web app manifest in layout', () => {
-    expect(rootLayoutContent).toContain('description:');
-    expect(rootLayoutContent).toContain('keywords:');
-    expect(rootLayoutContent).toContain("manifest: '/manifest.webmanifest'");
+  it('omits openGraph, twitter, icons, and manifest links from root layout', () => {
+    expect(rootLayoutContent).not.toMatch(/openGraph:/);
+    expect(rootLayoutContent).not.toMatch(/twitter:/);
+    expect(rootLayoutContent).not.toMatch(/manifest:/);
+    expect(rootLayoutContent).not.toMatch(/icons:/);
   });
 
-  it('configures light and dark purple browser theme colors in viewport', () => {
-    expect(rootLayoutContent).toContain('#5145e5');
-    expect(rootLayoutContent).toContain('#312e81');
-    expect(rootLayoutContent).toContain('prefers-color-scheme: light');
-    expect(rootLayoutContent).toContain('prefers-color-scheme: dark');
+  it('omits metadata export from home page to prevent title rendering on share', () => {
+    expect(homePageContent).not.toMatch(/export const metadata/);
   });
 
-  it('configures Open Graph and Twitter summary_large_image previews in layout', () => {
-    expect(rootLayoutContent).toContain('openGraph:');
-    expect(rootLayoutContent).toContain("card: 'summary_large_image'");
-    expect(rootLayoutContent).toContain('/opengraph-image.png');
-  });
-
-  it('embeds JSON-LD structured data for WebApplication and Organization', () => {
-    expect(rootLayoutContent).toContain('application/ld+json');
-    expect(rootLayoutContent).toContain('WebApplication');
-    expect(rootLayoutContent).toContain('Organization');
-  });
-
-  it('sets absolute title and canonical link on home page', () => {
-    expect(homePageContent).toContain("absolute: 'Metvent — Keep a conversation going'");
-    expect(homePageContent).toContain("canonical: '/'");
-  });
-
-  it('sets page title and canonical link on join page', () => {
-    expect(joinPageContent).toContain('title: PAGE_NAMES.join');
-    expect(joinPageContent).toContain("canonical: '/join'");
+  it('retains metadataBase and robots configuration in root layout', () => {
+    expect(rootLayoutContent).toContain('metadataBase: new URL(siteUrl)');
+    expect(rootLayoutContent).toContain('index: true');
+    expect(rootLayoutContent).toContain('follow: true');
   });
 
   it('keeps organiser login page hidden from Google with its own tab title', () => {
@@ -82,24 +62,11 @@ describe('Premium Head and Share Metadata Setup', () => {
   it('includes sitemap and robots routes with canonical URLs', () => {
     expect(robotsContent).toContain('sitemap.xml');
     expect(sitemapContent).toContain('https://metvent.vercel.app');
-    expect(manifestContent).toContain('standalone');
   });
 
-  it('verifies existence of share picture and icon assets', () => {
-    const ogPng = path.join(__dirname, '..', 'public', 'opengraph-image.png');
-    const ogJpg = path.join(__dirname, '..', 'public', 'opengraph-image.jpg');
-    const iconSvg = path.join(__dirname, '..', 'public', 'icon.svg');
-    const iconPng = path.join(__dirname, '..', 'public', 'icon.png');
-    const appleIcon = path.join(__dirname, '..', 'public', 'apple-icon.png');
-    const icon192 = path.join(__dirname, '..', 'public', 'icon-192.png');
-    const icon512 = path.join(__dirname, '..', 'public', 'icon-512.png');
-
-    expect(fs.existsSync(ogPng)).toBe(true);
-    expect(fs.existsSync(ogJpg)).toBe(true);
-    expect(fs.existsSync(iconSvg)).toBe(true);
-    expect(fs.existsSync(iconPng)).toBe(true);
-    expect(fs.existsSync(appleIcon)).toBe(true);
-    expect(fs.existsSync(icon192)).toBe(true);
-    expect(fs.existsSync(icon512)).toBe(true);
+  it('sets page title and canonical link on join page', () => {
+    expect(joinPageContent).toContain('title: PAGE_NAMES.join');
+    expect(joinPageContent).toContain("canonical: '/join'");
   });
 });
+

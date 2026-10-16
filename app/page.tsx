@@ -1,15 +1,5 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
-
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Metvent — Keep a conversation going',
-  },
-  alternates: {
-    canonical: '/',
-  },
-};
 
 export default function HomePage() {
   return (
