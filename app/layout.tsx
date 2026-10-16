@@ -53,11 +53,20 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/opengraph-image.png',
+        url: `${siteUrl}/opengraph-image.png`,
+        secureUrl: `${siteUrl}/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: 'Metvent logo and tagline on a purple background: Keep a conversation going. metvent.vercel.app',
         type: 'image/png',
+      },
+      {
+        url: `${siteUrl}/opengraph-image.jpg`,
+        secureUrl: `${siteUrl}/opengraph-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Metvent logo and tagline on a purple background: Keep a conversation going. metvent.vercel.app',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -66,7 +75,7 @@ export const metadata: Metadata = {
     title: 'Metvent — Keep a conversation going',
     description:
       'Metvent helps solo attendees keep conversations going at community meetups with real-time room topics and attendee talking points without any guesswork.',
-    images: ['/opengraph-image.png'],
+    images: [`${siteUrl}/opengraph-image.png`],
   },
   robots: {
     index: true,

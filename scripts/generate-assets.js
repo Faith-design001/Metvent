@@ -109,8 +109,17 @@ async function buildAssets() {
 
   fs.writeFileSync(path.join(publicDir, 'opengraph-image.png'), ogPngBuffer);
   fs.writeFileSync(path.join(publicDir, 'og-image.png'), ogPngBuffer);
-  fs.writeFileSync(path.join(appDir, 'opengraph-image.png'), ogPngBuffer);
   console.log('Generated 1200x630 Open Graph share PNG');
+
+  // Generate JPEG 1200x630 share picture for WhatsApp compatibility
+  const ogJpgBuffer = await sharp(Buffer.from(ogSvg))
+    .resize(1200, 630)
+    .jpeg({ quality: 90 })
+    .toBuffer();
+
+  fs.writeFileSync(path.join(publicDir, 'opengraph-image.jpg'), ogJpgBuffer);
+  fs.writeFileSync(path.join(publicDir, 'og-image.jpg'), ogJpgBuffer);
+  console.log('Generated 1200x630 Open Graph share JPEG');
 
   // Generate 32x32 browser tab icon
   const icon32Buffer = await sharp(Buffer.from(iconSvg))

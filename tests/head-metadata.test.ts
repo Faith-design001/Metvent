@@ -87,6 +87,7 @@ describe('Premium Head and Share Metadata Setup', () => {
 
   it('verifies existence of share picture and icon assets', () => {
     const ogPng = path.join(__dirname, '..', 'public', 'opengraph-image.png');
+    const ogJpg = path.join(__dirname, '..', 'public', 'opengraph-image.jpg');
     const iconSvg = path.join(__dirname, '..', 'public', 'icon.svg');
     const iconPng = path.join(__dirname, '..', 'public', 'icon.png');
     const appleIcon = path.join(__dirname, '..', 'public', 'apple-icon.png');
@@ -94,6 +95,7 @@ describe('Premium Head and Share Metadata Setup', () => {
     const icon512 = path.join(__dirname, '..', 'public', 'icon-512.png');
 
     expect(fs.existsSync(ogPng)).toBe(true);
+    expect(fs.existsSync(ogJpg)).toBe(true);
     expect(fs.existsSync(iconSvg)).toBe(true);
     expect(fs.existsSync(iconPng)).toBe(true);
     expect(fs.existsSync(appleIcon)).toBe(true);
