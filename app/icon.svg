@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5c50ee"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#iconBg)"/>
+  <!-- Two conversation attendee nodes -->
+  <circle cx="176" cy="208" r="56" fill="#ffffff"/>
+  <circle cx="336" cy="208" r="56" fill="#ffffff"/>
+  <!-- Connecting bridge / conversation wave -->
+  <path d="M160 320 C160 272 224 272 256 296 C288 272 352 272 352 320" stroke="#ffffff" stroke-width="36" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5c50ee"/>
+      <stop offset="50%" stop-color="#5145e5"/>
+      <stop offset="100%" stop-color="#3b31b3"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Subtle decorative accents -->
+  <circle cx="1060" cy="120" r="220" fill="#ffffff" fill-opacity="0.04"/>
+  <circle cx="140" cy="520" r="180" fill="#ffffff" fill-opacity="0.03"/>
+
+  <!-- Central Brand Container -->
+  <g transform="translate(600, 290)">
+    <!-- Brand Icon Emblem -->
+    <g transform="translate(0, -115)">
+      <rect x="-42" y="-42" width="84" height="84" rx="22" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2"/>
+      <!-- Conversation circles and arc -->
+      <circle cx="-14" cy="-8" r="8" fill="#ffffff"/>
+      <circle cx="14" cy="-8" r="8" fill="#ffffff"/>
+      <path d="M-18 10 C-18 2 -6 2 0 6 C6 2 18 2 18 10" stroke="#ffffff" stroke-width="5" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- Large White Wordmark -->
+    <text x="0" y="25" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="82" font-weight="800" letter-spacing="-2" fill="#ffffff">
+      Metvent
+    </text>
+
+    <!-- Tagline underneath -->
+    <text x="0" y="85" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="-0.5" fill="#f1f0fd">
+      Keep a conversation going.
+    </text>
+
+    <!-- Purpose sub-badge -->
+    <g transform="translate(0, 140)">
+      <rect x="-180" y="-18" width="360" height="36" rx="18" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+      <text x="0" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1" fill="#ffffff">
+        COMMUNITY MEETUP COMPANION
+      </text>
+    </g>
+  </g>
+
+  <!-- Small URL at the bottom -->
+  <g transform="translate(600, 565)">
+    <text x="0" y="0" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="0.5" fill="#e0e7ff" fill-opacity="0.9">
+      metvent.vercel.app
+    </text>
+  </g>
+</svg>

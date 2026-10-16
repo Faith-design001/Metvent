@@ -1,13 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { PAGE_NAMES } from '@/lib/routes';
 import { JOIN_CODE_LENGTH, JOIN_CODE_MESSAGES } from '@/lib/join-code';
 import { submitJoinCode } from './actions';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
+  title: PAGE_NAMES.join,
+  description: 'Enter a 6-character event code from your organiser to join your meetup.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/join',
   },
 };
 

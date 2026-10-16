@@ -3,9 +3,11 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  robots: {
-    index: true,
-    follow: true,
+  title: {
+    absolute: 'Metvent — Keep a conversation going',
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 

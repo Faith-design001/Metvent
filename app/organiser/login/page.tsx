@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { PAGE_NAMES } from '@/lib/routes';
 import styles from './page.module.css';
+
+export const metadata: Metadata = {
+  title: PAGE_NAMES.organiserLogin,
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function OrganiserLoginPage() {
   return (
